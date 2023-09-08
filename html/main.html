@@ -7,13 +7,14 @@
 
     <link rel="stylesheet" href="../css/main.css" />
   </head>
+
   <body>
     <div id="container1">
-        <div class="time"></div>
-        </div>
+      <div id="container2">
+        <div onload="showClock" class="time"></div>
 
         <div class="weather">
-          <span>현재 날씨를 알려줘...</span>
+          <span>현재 날씨</span>
         </div>
 
         <div class="name">
@@ -21,7 +22,7 @@
         </div>
 
         <div class="add">
-          <!-- <span>닉네임</span>
+          <!-- <span>닉네임</span>ㄴㄴㄴ
           <input type="text" /> -->
         </div>
 
@@ -29,4 +30,27 @@
       </div>
     </div>
   </body>
+
+  <script>
+    function showClock(){
+      var currentDate = new Date();
+      var divClock = document.getElementById('divClock');
+      var msg = "";
+
+      msg += currentDate.getHours()+":";
+     
+
+      msg += currentDate.getMinutes()+":";
+      msg += currentDate.getSeconds();
+ 
+      divClock.innerText = msg;
+
+      if (currentDate.getMinutes()>58) {    //정각 1분전부터 빨강색으로 출력
+          divClock.style.color="red";
+      }
+      
+      setTimeout(showClock,1000);  //1초마다 갱신
+    }
+
+  </script>
 </html>
