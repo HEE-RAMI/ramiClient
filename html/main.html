@@ -11,7 +11,9 @@
   <body>
     <div id="container1">
       <div id="container2">
-        <div onload="showClock" class="time"></div>
+        <h1 id="clock" class="time">
+          
+        </h1>  
 
         <div class="weather">
           <span>현재 날씨</span>
@@ -22,35 +24,31 @@
         </div>
 
         <div class="add">
-          <!-- <span>닉네임</span>ㄴㄴㄴ
-          <input type="text" /> -->
+
         </div>
 
         <div class="list"></div>
       </div>
     </div>
-  </body>
 
-  <script>
-    function showClock(){
-      var currentDate = new Date();
-      var divClock = document.getElementById('divClock');
-      var msg = "";
-
-      msg += currentDate.getHours()+":";
-     
-
-      msg += currentDate.getMinutes()+":";
-      msg += currentDate.getSeconds();
- 
-      divClock.innerText = msg;
-
-      if (currentDate.getMinutes()>58) {    //정각 1분전부터 빨강색으로 출력
-          divClock.style.color="red";
+    <script type="text/javascript">
+      function getTime(){
+        const date = new Date();
+        const hr = String(date.getHours()).padStart(2, "0");
+        const min = String(date.getMinutes()).padStart(2, "0");
+        const sec = String(date.getSeconds()).padStart(2, "0");
+  
+        document.querySelector("h1#clock").innerHTML = `${hr}:${min}:${sec}`;
       }
       
-      setTimeout(showClock,1000);  //1초마다 갱신
-    }
+      setInterval(getTime, 1000);
 
-  </script>
+    </script>
+  </body>
+
 </html>
+
+<!-- 
+
+//백준을 풀고 , 코드를 분석
+//자료구조 -->
