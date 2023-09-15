@@ -63,7 +63,8 @@
   justify-content: center;
   display: flex;
 
-  margin-top: 70px;
+  margin-top: 50px;
+  margin-left: 40px;
 
   /* font-size: 25px;
   font-weight: 400;
@@ -81,4 +82,14 @@ input{
   border-top: none;
 
   border-bottom: 1px solid gray;
+  background-color: rgb(242, 242, 242);
+  
+  width: 230px;
+  font-size: 25px;
+}
+
+button{
+  border: none;
+  font-size: 25px;
+  margin-left: 10px;
 }
